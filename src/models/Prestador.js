@@ -49,11 +49,11 @@ let prestadorSchema = new mongoose.Schema({
     },
 
     endereco: {
-        cep: { String, required: [true, "O CEP é obrigatório"] },
-        logradouro: { String, required: [true, "O logradouro é obrigatório"] },
+        cep: { type: String, required: [true, "O CEP é obrigatório"] },
+        logradouro: { type: String, required: [true, "O logradouro é obrigatório"] },
         numero: String,
         complemento: String,
-        bairro: { String, required: [true, "O bairro é obrigatório"] },
+        bairro: { type: String, required: [true, "O bairro é obrigatório"] },
         cidade: { type: String, required: [true, "A cidade é obrigatória"] },
         estado: { type: String, required: [true, "O estado é obrigatório"], maxlength: 2 },
     },
