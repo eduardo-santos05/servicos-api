@@ -10,6 +10,14 @@ export async function buscarPorId(id) {
     return await Contratante.findById(id);
 }
 
+export async function buscarAtivos() {
+    return await Contratante.find({ ativo: true })
+}
+
+export async function buscarPorTipoPessoa(tipoPessoa) {
+    return await Contratante.find({ tipoPessoa: tipoPessoa })
+}
+
 export async function salvar(dados) {
     return await Contratante.create(dados);
 }
@@ -20,12 +28,4 @@ export async function atualizarPorId(id, dados) {
 
 export async function removerPorId(id) {
     return await Contratante.findByIdAndDelete(id);
-}
-
-export async function buscarAtivos() {
-    return await Contratante.find({ ativo: true })
-}
-
-export async function buscarPorTipoPessoa(tipoPessoa) {
-    return await Contratante.find({ tipoPessoa: tipoPessoa })
 }

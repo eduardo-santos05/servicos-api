@@ -10,26 +10,13 @@ export async function buscarPorId(id) {
     return await Servico.findById(id);
 }
 
-export async function salvar(dados) {
-    return await Servico.create(dados);
-}
-
-export async function atualizarPorId(id, dados) {
-    return await Servico.findByIdAndUpdate(id, dados);
-}
-
-export async function removerPorId(id) {
-    return await Servico.findByIdAndDelete(id);
-}
-
-export async function buscarPorCategoriaId(categoriaId) {
-    return await Servico.find({ 'categoria.id': categoriaId });
+export async function buscarPorCategoriaId(id) {
+    return await Servico.find({ 'categoria.id': id });
 }
 
 export async function buscarPorCategoriaNome(nome) {
     return await Servico.find({ 'categoria.nome': nome });
 }
-
 
 export async function buscarPorTag(tag) {
     return await Servico.find({ tags: tag })
@@ -45,4 +32,16 @@ export async function buscarPorModalidadeAtendimento(modalidade) {
 
 export async function buscarPorStatus(status) {
     return await Servico.find({ status: status })
+}
+
+export async function salvar(dados) {
+    return await Servico.create(dados);
+}
+
+export async function atualizarPorId(id, dados) {
+    return await Servico.findByIdAndUpdate(id, dados);
+}
+
+export async function removerPorId(id) {
+    return await Servico.findByIdAndDelete(id);
 }
