@@ -44,7 +44,7 @@ export async function criarServico(dados) {
     return await salvar(dados)
 }
 
-export async function atualizarServicoPorId(id, dados) {
+export async function atualizarServico(id, dados) {
     return await atualizarPorId(id, dados)
 }
 

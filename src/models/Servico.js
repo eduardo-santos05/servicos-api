@@ -64,7 +64,7 @@ let servicoSchema = new mongoose.Schema({
         required: [true, 'A nota é obrigatória'],
         min: [1, 'A nota mínima é 1'],
         max: [5, 'A nota máxima é 5'],
-        validar: {
+        validate: {
             validator: Number.isInteger,
             message: 'A nota deve ser um número inteiro'
         },

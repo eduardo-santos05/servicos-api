@@ -7,7 +7,7 @@ import {
     buscarServicosPorModalidadeAtendimento,
     buscarServicosPorStatus,
     criarServico,
-    atualizarServicoPorId,
+    atualizarServico,
     removerServico
 } from "../services/servicoService.js";
 
