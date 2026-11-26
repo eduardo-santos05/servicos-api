@@ -3,7 +3,7 @@ import {
     buscarServicoPorId,
     buscarServicosPorCategoriaId,
     buscarServicosPorCategoriaNome,
-    buscarServicosPorTag,
+    buscarServicosPorTags,
     buscarServicosPorModalidadeAtendimento,
     buscarServicosPorStatus,
     criarServico,
@@ -38,7 +38,7 @@ export async function buscarPorId(req, res) {
 
 export async function buscarPorCategoriaId(req, res) {
     try {
-        let servicos = await buscarServicosPorCategoriaId(req.body?.categoria?.id);
+        let servicos = await buscarServicosPorCategoriaId(req.body.id);
 
         if (servicos.length === 0) {
             return res.status(404).send({ erro: "Não há serviços cadastrados para o filtro informado" });
@@ -52,7 +52,7 @@ export async function buscarPorCategoriaId(req, res) {
 
 export async function buscarPorCategoriaNome(req, res) {
     try {
-        let servicos = await buscarServicosPorCategoriaNome(req.body?.categoria?.nome);
+        let servicos = await buscarServicosPorCategoriaNome(req.body.nome);
 
         if (servicos.length === 0) {
             return res.status(404).send({ erro: "Não há serviços cadastrados para o filtro informado" });
@@ -64,9 +64,9 @@ export async function buscarPorCategoriaNome(req, res) {
     }
 }
 
-export async function buscarPorTag(req, res) {
+export async function buscarPorTags(req, res) {
     try {
-        let servicos = await buscarServicosPorTag(req.body.tag);
+        let servicos = await buscarServicosPorTags(req.body.tags);
 
         if (servicos.length === 0) {
             return res.status(404).send({ erro: "Não há serviços cadastrados para o filtro informado" });

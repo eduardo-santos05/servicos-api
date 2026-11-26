@@ -65,7 +65,7 @@ export async function buscarPorTipoPessoa(req, res) {
 
 export async function buscarPorCategoriaId(req, res) {
     try {
-        let prestadores = await buscarPrestadoresPorCategoriaId(req.body?.categoria?.id);
+        let prestadores = await buscarPrestadoresPorCategoriaId(req.body.id);
 
         if (prestadores.length === 0) {
             return res.status(404).send({ erro: "Não há prestadores cadastrados para o filtro informado" });
@@ -79,7 +79,7 @@ export async function buscarPorCategoriaId(req, res) {
 
 export async function buscarPorCategoriaNome(req, res) {
     try {
-        let prestadores = await buscarPrestadoresPorCategoriaNome(req.body?.categoria?.nome);
+        let prestadores = await buscarPrestadoresPorCategoriaNome(req.body.nome);
 
         if (prestadores.length === 0) {
             return res.status(404).send({ erro: "Não há prestadores cadastrados para o filtro informado" });

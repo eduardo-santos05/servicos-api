@@ -3,7 +3,7 @@ import {
     buscarPorId,
     buscarPorCategoriaId,
     buscarPorCategoriaNome,
-    buscarPorTag,
+    buscarPorTags,
     buscarPorTipo,
     buscarPorModalidadeAtendimento,
     buscarPorStatus,
@@ -28,8 +28,8 @@ export async function buscarServicosPorCategoriaNome(nome) {
     return await buscarPorCategoriaNome(nome)
 }
 
-export async function buscarServicosPorTag(tag) {
-    return await buscarPorTag(tag)
+export async function buscarServicosPorTags(tags) {
+    return await buscarPorTags(tags)
 }
 
 export async function buscarServicosPorModalidadeAtendimento(modalidade) {

@@ -14,10 +14,10 @@ import {
 export function prestadorRoutes(router) {
     router.get("/prestadores", listar);
     router.get("/prestadores/:id", buscarPorId);
-    router.get("/prestadores", buscarAtivos);
-    router.get("/prestadores", buscarPorTipoPessoa);
-    router.get("/prestadores", buscarPorCategoriaId);
-    router.get("/prestadores", buscarPorCategoriaNome);
+    router.post("/prestadores/ativos", buscarAtivos);
+    router.post("/prestadores/filtrar-por-tipo-pessoa", buscarPorTipoPessoa);
+    router.post("/prestadores/filtrar-por-id-da-categoria", buscarPorCategoriaId);
+    router.post("/prestadores/filtrar-por-nome-da-categoria", buscarPorCategoriaNome);
     router.post("/prestadores", criar);
     router.put("/prestadores/:id", atualizar);
     router.delete("/prestadores/:id", remover);

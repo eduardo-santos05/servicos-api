@@ -50,7 +50,7 @@ export async function buscarAtivos(req, res) {
 
 export async function buscarPorPerfil(req, res) {
     try {
-        let usuarios = await buscarUsuariosPorPerfil(req.body.perfil);
+        let usuarios = await buscarUsuariosPorPerfil(req.body.perfis);
 
         if (usuarios.length === 0) {
             return res.status(404).send({ erro: "Não há usuários cadastrados para o filtro informado" });

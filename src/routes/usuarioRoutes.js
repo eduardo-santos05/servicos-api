@@ -12,8 +12,8 @@ import {
 export function usuarioRoutes(router) {
     router.get("/usuarios", listar);
     router.get("/usuarios/:id", buscarPorId);
-    router.get("/usuarios", buscarAtivos);
-    router.get("/usuarios", buscarPorPerfil)
+    router.post("/usuarios/ativos", buscarAtivos);
+    router.post("/usuarios/buscar-por-perfil", buscarPorPerfil)
     router.post("/usuarios", criar);
     router.put("/usuarios/:id", atualizar);
     router.delete("/usuarios/:id", remover);

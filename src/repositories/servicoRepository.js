@@ -18,8 +18,8 @@ export async function buscarPorCategoriaNome(nome) {
     return await Servico.find({ 'categoria.nome': nome });
 }
 
-export async function buscarPorTag(tag) {
-    return await Servico.find({ tags: tag })
+export async function buscarPorTags(tags) {
+    return await Servico.find({ tags: [tags] })
 }
 
 export async function buscarPorTipo(tipo) {

@@ -12,8 +12,8 @@ import {
 export function contratanteRoutes(router) {
     router.get("/contratantes", listar);
     router.get("/contratantes/:id", buscarPorId);
-    router.get("/contratantes", buscarAtivos);
-    router.get("/contratantes", buscarPorTipoPessoa);
+    router.post("/contratantes/ativos", buscarAtivos);
+    router.post("/contratantes/filtrar-por-tipo-pessoa", buscarPorTipoPessoa);
     router.post("/contratantes", criar);
     router.put("/contratantes/:id", atualizar);
     router.delete("/contratantes/:id", remover);

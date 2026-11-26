@@ -57,7 +57,7 @@ let servicoSchema = new mongoose.Schema({
         required: [true, "O ID do prestador é obrigatório"] 
     },
 
-    tags: [{ type: String }],
+    tags: [{ type: Array }],
  
     avaliacao: {
         type: Number,

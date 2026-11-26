@@ -3,7 +3,7 @@ import {
     buscarPorId,
     buscarPorCategoriaId,
     buscarPorCategoriaNome,
-    buscarPorTag,
+    buscarPorTags,
     buscarPorModalidadeAtendimento,
     buscarPorStatus,
     criar,
@@ -15,11 +15,11 @@ import {
 export function servicoRoutes(router) {
     router.get("/servicos", listar);
     router.get("/servicos/:id", buscarPorId);
-    router.get("/servicos", buscarPorCategoriaId);
-    router.get("/servicos", buscarPorCategoriaNome);
-    router.get("/servicos", buscarPorTag);
-    router.get("/servicos", buscarPorModalidadeAtendimento);
-    router.get("/servicos", buscarPorStatus);
+    router.post("/servicos/filtrar-por-id-da-categoria", buscarPorCategoriaId);
+    router.post("/servicos/filtrar-por-nome-da-categoria", buscarPorCategoriaNome);
+    router.post("/servicos/filtrar-por-tags", buscarPorTags);
+    router.post("/servicos/filtrar-por-modalidade-de-atendimento", buscarPorModalidadeAtendimento);
+    router.post("/servicos/filtrar-por-status", buscarPorStatus);
     router.post("/servicos", criar);
     router.put("/servicos/:id", atualizar);
     router.delete("/servicos/:id", remover);
